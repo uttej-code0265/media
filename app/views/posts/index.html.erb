@@ -1,0 +1,21 @@
+<h2>Posts Listing</h2>
+
+
+<% @posts.each do |post| %>
+<div class="container">
+    <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+<div class="card text-white text-center shadow bg-info mb-3">
+  <div class="card-header bg-transparent border-white"><%=post.title%></div>
+  <div class="card-body text-white">
+    <h5 class="card-title"><%=post.title%></h5>
+    <p class="card-text"><%=post.description%></p>
+  </div>
+  <div class="card-footer bg-transparent border-white">comments</div>
+</div>
+</div>
+</div>
+</div>
+<% end %>
+
+<%= link_to "Logout",  destroy_user_session_path,method: :delete %>

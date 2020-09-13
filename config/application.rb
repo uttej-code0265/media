@@ -15,14 +15,6 @@ module Media
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    ActionMailer::Base.smtp_settings = {
-    :address =>'smtp.google.com',
-    :domain =>'mail.google.com',
-    :port =>587,
-    :username => "uttejkumarponugoti@gmail.com",
-    :password => "9866536653",
-    :authentication => 'login',
-    :enable_starttls_auto => true
-}
+    
   end
 end
