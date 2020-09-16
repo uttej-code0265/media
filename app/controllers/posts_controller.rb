@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     before_action :authenticate_user!
     
     def new
+        @post=current_user.posts.build
         @post=Post.new
     end
 
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
     end
     
     def create
-        @post=Post.new(params.require(:post).permit(:title,:description))
+        @post=current_user.posts.build(params_post)
          if @post.save
             redirect_to @post
          else
@@ -20,6 +21,7 @@ class PostsController < ApplicationController
 
     def show
         @post=Post.find(params[:id])
+        @comments=@post.comments.all
     end
 
     def edit
@@ -28,7 +30,7 @@ class PostsController < ApplicationController
 
     def update
         @post=Post.find(params[:id])
-         if @post.update(params.require(:post).permit(:title,:description))
+         if @post.update(params_post)
         redirect_to @post
         else
         render 'edit'

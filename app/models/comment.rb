@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
-    validates :name,presence:true
-    validates :reply,presence:true
+    belongs_to :user
     belongs_to :post
 end
