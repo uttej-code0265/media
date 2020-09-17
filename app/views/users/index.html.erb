@@ -1,0 +1,16 @@
+<% @users.each do |user| %>
+    <div class="container">
+    <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+<div class="card text-white text-center shadow bg-info mb-3">
+  <div class="card-header bg-transparent border-white"><%=user.name%></div>
+  <div class="card-body text-white">
+    <h5 class="card-title"><%=link_to user.name,user,class:"text-white"%></h5>
+    <p class="card-text"><%=user.posts.count%> posts</p>
+  </div>
+  <div class="card-footer bg-transparent border-white"><%=user.comments.count%> comments</div>
+</div>
+</div>
+</div>
+</div>
+<% end %>

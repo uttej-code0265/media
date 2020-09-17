@@ -8,8 +8,10 @@
           <p class="card-text"><%=@post.description%></p>
         </div>
         <div class="card-footer bg-transparent border-white">
+        <% if current_user==@post.user %>
           <%= link_to "Edit",edit_post_path,class:"btn btn-outline-warning" %>
           <%= link_to "Delete",post_path,class:"btn btn-outline-warning",method: :delete %>
+          <% end %>
         </div>
       </div> 
     </div> 
