@@ -1,25 +1,17 @@
-# README
+* It is a media application which includes users,posts,comments
+* ruby version - ruby '2.6.6'
+* rails version - gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+* sqlite version - 'sqlite3', '~> 1.4'
+* other gems used
+    gem 'devise' (for user authentication)
+    gem 'devise-bootstrap-views', '~> 1.0' (for bootstrap user views)
+     gem 'rspec-rails', ">= 3.9.0"  (for testing)
 
-boom boom
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* There is a user authentication system and users can create many posts and posts can have many comments
 
-Things you may want to cover:
+* Associations
+    user -> has many comments,has many posts
+    post -> has many comments,belongs to user
+    comments -> belongs to user,belongs to post
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* validation tests are also performed using rspec-rails
