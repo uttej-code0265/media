@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
         @post=Post.find(params[:post_id])
         @comment=@post.comments.build(comment_params)
         @comment.user_id=current_user.id
-        if @comment.save
+        if @comment.save!
         redirect_to @post
         else
             redirect_to @posts    
